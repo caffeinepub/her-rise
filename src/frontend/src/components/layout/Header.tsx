@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
-import { Heart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
@@ -22,15 +22,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <Link
             to="/"
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center flex-shrink-0"
             data-ocid="nav.link"
           >
-            <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-              <Heart className="w-5 h-5 text-white fill-white" />
-            </div>
-            <span className="font-bold text-xl text-purple-deep">
-              <span className="text-primary">HER</span> RISE
-            </span>
+            <img
+              src="/assets/uploads/Her_LOGO-1-4.png"
+              alt="HER RISE Logo"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           <nav

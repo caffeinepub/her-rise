@@ -46,40 +46,39 @@ const stats = [
 // ✏️ Update team members here — add photo URL or leave empty for initials avatar
 const teamMembers = [
   {
-    name: "Aisha Rahman",
-    role: "President",
-    study: "Computer Science, Year 3",
-    photo: "",
+    name: "Bhavagna Reddy",
+    role: "Founder & Director",
+    study: "Second-year Fashion Design, Hyderabad",
+    photo: "/assets/uploads/BHAVAGNA-REDDY-2.jpeg",
+    desc: "Bhavagna Reddy is the Founder and Director of HER RISE. She is passionate about building initiatives that empower women, promote safety awareness, and create a supportive community through education and technology.",
   },
   {
-    name: "Meera Nair",
-    role: "Vice President",
-    study: "Law & Social Justice, Year 4",
-    photo: "",
+    name: "Meghana Reddy",
+    role: "Human Resources Manager",
+    study: "Second-year Fashion Design, Hyderabad",
+    photo: "/assets/uploads/MEGHANA-REDDY-5.jpeg",
+    desc: "Meghana Reddy serves as the Human Resources Manager at HER RISE and helps coordinate team collaboration, organizational planning, and internal communication.",
   },
   {
-    name: "Priya Singh",
-    role: "Events Coordinator",
-    study: "Business Administration, Year 2",
-    photo: "",
+    name: "Pradhiksha Reddy",
+    role: "Administrative Manager",
+    study: "Second-year Undergraduate, MGIT Hyderabad",
+    photo: "/assets/uploads/PRADHIKSHA-REDDY-1.jpeg",
+    desc: "Pradhiksha Reddy manages administrative operations within HER RISE and helps organize activities, coordinate initiatives, and ensure smooth execution of programs.",
   },
   {
-    name: "Divya Kapoor",
-    role: "Tech Lead",
-    study: "Information Technology, Year 3",
-    photo: "",
+    name: "Srivalli Oduri",
+    role: "Digital Media Head",
+    study: "Second-year Undergraduate, MGIT Hyderabad",
+    photo: "/assets/uploads/SRIVALLI-ODURI-3.jpeg",
+    desc: "Srivalli Oduri manages the digital presence of HER RISE including social media communication, awareness campaigns, and online engagement initiatives.",
   },
   {
-    name: "Sophia Chen",
-    role: "Outreach & Communications",
-    study: "Media & Communications, Year 2",
-    photo: "",
-  },
-  {
-    name: "Fatima Al-Hassan",
-    role: "Research & Advocacy",
-    study: "Gender Studies, Year 4",
-    photo: "",
+    name: "Samiksha Reddy",
+    role: "Digital Media Head",
+    study: "Second-year Engineering, Hyderabad",
+    photo: "/assets/uploads/SAMIKSHA-REDDY-6.jpeg",
+    desc: "Samiksha Reddy contributes to the digital media initiatives of HER RISE by supporting online awareness programs and helping expand the organization's digital reach.",
   },
 ];
 
@@ -260,7 +259,7 @@ export default function Home() {
               Passionate students driving change, one initiative at a time.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {teamMembers.map((member, i) => (
               <div
                 key={member.name}
@@ -288,8 +287,11 @@ export default function Home() {
                 <p className="text-primary text-xs font-semibold mb-1">
                   {member.role}
                 </p>
-                <p className="text-muted-foreground text-xs leading-relaxed">
+                <p className="text-muted-foreground text-xs leading-relaxed mb-2">
                   {member.study}
+                </p>
+                <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3">
+                  {member.desc}
                 </p>
               </div>
             ))}

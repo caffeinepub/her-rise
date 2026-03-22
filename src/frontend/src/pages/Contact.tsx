@@ -1,55 +1,70 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { SiFacebook, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
+import { Mail, Phone } from "lucide-react";
+import { SiInstagram, SiLinkedin } from "react-icons/si";
 
 // ✏️ Update contact details here
 const CONTACT_INFO = {
-  email: "herrise@club.edu",
-  phone: "+1 (555) 000-0000",
-  address: "Student Union Building, Room 204",
+  email: "herrise.hyd@gmail.com", // ✏️ Update with official email
+  instagram: "https://instagram.com/herrise.hyd",
+  instagramHandle: "@herrise.hyd",
+  linkedin: "", // ✏️ Add LinkedIn URL when available
 };
 
-// ✏️ Update social media links here
-const SOCIAL_LINKS = [
+// ✏️ Update team member contacts here
+const TEAM_CONTACTS = [
+  { name: "Bhavagna Reddy", role: "Founder & Director", phone: "8309301075" },
   {
-    platform: "Instagram",
-    href: "https://instagram.com/herrise",
-    Icon: SiInstagram,
+    name: "Pradhiksha Reddy",
+    role: "Administrative Manager",
+    phone: "8341693369",
   },
+  { name: "Samiksha Reddy", role: "Digital Media Head", phone: "9866969332" },
+  { name: "Srivalli Oduri", role: "Digital Media Head", phone: "8143846341" },
   {
-    platform: "LinkedIn",
-    href: "https://linkedin.com/company/herrise",
-    Icon: SiLinkedin,
+    name: "Meghana Reddy",
+    role: "Human Resources Manager",
+    phone: "+91 99596 01124",
   },
-  {
-    platform: "Facebook",
-    href: "https://facebook.com/herrise",
-    Icon: SiFacebook,
-  },
-  { platform: "X/Twitter", href: "https://x.com/herrise", Icon: SiX },
 ];
 
-const contactItems = [
-  {
-    icon: Mail,
-    label: "Club Email",
-    value: CONTACT_INFO.email,
-    href: `mailto:${CONTACT_INFO.email}`,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: CONTACT_INFO.phone,
-    href: `tel:${CONTACT_INFO.phone.replace(/[^+\d]/g, "")}`,
-  },
-  {
-    icon: MapPin,
-    label: "Club Room",
-    value: CONTACT_INFO.address,
-    href: "#",
-  },
+const avatarColors = [
+  "bg-violet-200 text-violet-800",
+  "bg-pink-200 text-pink-800",
+  "bg-purple-200 text-purple-800",
+  "bg-fuchsia-200 text-fuchsia-800",
+  "bg-rose-200 text-rose-800",
 ];
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
 
 export default function Contact() {
+  const socialLinks = [
+    {
+      platform: "Instagram",
+      handle: CONTACT_INFO.instagramHandle,
+      href: CONTACT_INFO.instagram,
+      Icon: SiInstagram,
+      color: "text-pink-600",
+    },
+    ...(CONTACT_INFO.linkedin
+      ? [
+          {
+            platform: "LinkedIn",
+            handle: "HER RISE",
+            href: CONTACT_INFO.linkedin,
+            Icon: SiLinkedin,
+            color: "text-blue-600",
+          },
+        ]
+      : []),
+  ];
+
   return (
     <div>
       {/* Hero */}
@@ -68,37 +83,75 @@ export default function Contact() {
             Contact HER RISE
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">
-            Have a question, want to collaborate, or interested in joining the
-            club? Reach out — we'd love to connect with you.
+            Have a question, want to collaborate, or need support? Reach out to
+            our team — we'd love to connect with you.
           </p>
         </div>
       </section>
 
-      {/* Contact Info */}
+      {/* Reach Our Team */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
-          {/* Info Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14">
-            {contactItems.map(({ icon: Icon, label, value, href }) => (
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-primary font-semibold text-sm uppercase tracking-widest">
+              Direct Contact
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-purple-deep mt-2">
+              Reach Our Team
+            </h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Feel free to reach out to any of our team members directly.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+            {TEAM_CONTACTS.map(({ name, role, phone }, i) => (
               <a
-                key={label}
-                href={href}
-                className="rounded-2xl p-6 shadow-card border border-border hover:shadow-card-hover transition-shadow flex flex-col items-center text-center gap-3 group"
-                data-ocid="contact.card"
+                key={name}
+                href={`tel:${phone.replace(/[^+\d]/g, "")}`}
+                className="rounded-2xl p-5 shadow-card border border-border hover:shadow-card-hover transition-all group bg-white flex items-center gap-4"
+                data-ocid={`contact.item.${i + 1}`}
               >
-                <div className="w-12 h-12 rounded-xl bg-lavender-bg flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Icon className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
+                <div
+                  className={`w-12 h-12 rounded-full flex items-center justify-center text-base font-bold flex-shrink-0 ${avatarColors[i % avatarColors.length]}`}
+                >
+                  {getInitials(name)}
                 </div>
-                <div>
-                  <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
-                    {label}
+                <div className="min-w-0">
+                  <div className="font-bold text-purple-deep text-sm truncate">
+                    {name}
                   </div>
-                  <div className="font-semibold text-purple-deep text-sm">
-                    {value}
+                  <div className="text-primary text-xs font-medium mb-1 truncate">
+                    {role}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
+                    <Phone className="w-3.5 h-3.5 flex-shrink-0 text-primary" />
+                    <span>{phone}</span>
                   </div>
                 </div>
               </a>
             ))}
+          </div>
+
+          {/* Email Card */}
+          <div className="mb-8">
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="rounded-2xl p-6 shadow-card border border-border hover:shadow-card-hover transition-all group bg-white flex items-center gap-5 max-w-md mx-auto"
+              data-ocid="contact.card"
+            >
+              <div className="w-12 h-12 rounded-xl bg-lavender-bg flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                <Mail className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
+                  Club Email
+                </div>
+                <div className="font-semibold text-purple-deep text-sm">
+                  {CONTACT_INFO.email}
+                </div>
+              </div>
+            </a>
           </div>
 
           {/* Social Media */}
@@ -110,25 +163,30 @@ export default function Contact() {
             }}
           >
             <h2 className="text-xl font-bold text-purple-deep mb-2 text-center">
-              Follow Us on Social Media
+              Follow HER RISE
             </h2>
             <p className="text-muted-foreground text-sm text-center mb-8">
-              Stay updated with club events, announcements, and community
+              Stay updated with our events, announcements, and community
               highlights.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {SOCIAL_LINKS.map(({ platform, href, Icon }) => (
+              {socialLinks.map(({ platform, handle, href, Icon, color }) => (
                 <a
                   key={platform}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={platform}
-                  className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white shadow-card hover:shadow-card-hover text-purple-deep font-medium text-sm hover:text-primary transition-all group"
+                  className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white shadow-card hover:shadow-card-hover text-purple-deep font-medium text-sm hover:text-primary transition-all group"
                   data-ocid="contact.link"
                 >
-                  <Icon className="w-5 h-5 text-primary" />
-                  {platform}
+                  <Icon className={`w-5 h-5 ${color}`} />
+                  <div>
+                    <div className="font-semibold text-sm">{platform}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {handle}
+                    </div>
+                  </div>
                 </a>
               ))}
             </div>
