@@ -31,39 +31,6 @@ const values = [
   },
 ];
 
-const timeline = [
-  {
-    year: "2018",
-    title: "Club Founded",
-    desc: "HER RISE was established on campus with a founding team of 12 passionate students, driven to create a community for women's empowerment.",
-  },
-  {
-    year: "2019",
-    title: "First Workshop Series",
-    desc: "Launched our flagship workshop series on leadership and career development, attracting over 200 students in the first semester.",
-  },
-  {
-    year: "2020",
-    title: "Digital Community",
-    desc: "Moved events online during the pandemic, growing our reach to students across multiple campuses.",
-  },
-  {
-    year: "2021",
-    title: "Mentorship Program",
-    desc: "Launched peer mentorship pairings connecting first-year students with senior members and industry professionals.",
-  },
-  {
-    year: "2023",
-    title: "Campus Recognition",
-    desc: "Awarded Best Student Club of the Year and partnered with the university's Women in STEM initiative.",
-  },
-  {
-    year: "2024",
-    title: "Tech & Safety Initiative",
-    desc: "Launched our women's safety tech initiative, collaborating with the CS department to build community-focused safety tools.",
-  },
-];
-
 // ✏️ Update upcoming events here — add, edit, or remove events as needed
 const events = [
   {
@@ -94,14 +61,14 @@ export default function About() {
         className="py-20 px-4 text-center"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+            "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
         }}
       >
         <div className="max-w-3xl mx-auto">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Who We Are
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-deep mt-2 mb-4">
+          <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-charcoal-deep mt-2 mb-4">
             About HER RISE
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">
@@ -120,24 +87,24 @@ export default function About() {
               emoji: "🎯",
               title: "Our Mission",
               desc: "To empower women on campus through education, mentorship, and community — providing tools for personal growth, safety awareness, and leadership development.",
-              bg: "bg-lavender-bg",
+              bg: "bg-cream-bg",
             },
             {
               emoji: "🌟",
               title: "Our Vision",
               desc: "A campus culture where women lead with confidence, where gender barriers are dismantled, and where every woman has access to the support she needs to thrive.",
-              bg: "bg-pink-light",
+              bg: "bg-rose-light",
             },
             {
               emoji: "💡",
               title: "Our Purpose",
               desc: "To bridge the gap between ambition and opportunity — closing that gap through peer support, skill-building workshops, and meaningful community connection.",
-              bg: "bg-lavender-bg",
+              bg: "bg-cream-bg",
             },
           ].map(({ emoji, title, desc, bg }) => (
             <div key={title} className={`${bg} rounded-2xl p-8`}>
               <div className="text-4xl mb-4">{emoji}</div>
-              <h3 className="text-xl font-bold text-purple-deep mb-3">
+              <h3 className="font-playfair text-xl font-bold text-charcoal-deep mb-3">
                 {title}
               </h3>
               <p className="text-foreground/65 leading-relaxed text-sm">
@@ -151,11 +118,11 @@ export default function About() {
       {/* Values */}
       <section
         className="py-16 px-4"
-        style={{ background: "oklch(0.96 0.02 293)" }}
+        style={{ background: "oklch(0.95 0.02 70)" }}
       >
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-purple-deep">
+            <h2 className="font-playfair text-3xl font-bold text-charcoal-deep">
               Our Core Values
             </h2>
           </div>
@@ -168,7 +135,9 @@ export default function About() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
-                <h4 className="font-bold text-purple-deep mb-2">{title}</h4>
+                <h4 className="font-playfair font-bold text-charcoal-deep mb-2">
+                  {title}
+                </h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {desc}
                 </p>
@@ -178,45 +147,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-purple-deep">Our Journey</h2>
-            <p className="text-muted-foreground mt-2">
-              How HER RISE has grown over the years
-            </p>
-          </div>
-          <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border" />
-            <div className="space-y-8">
-              {timeline.map(({ year, title, desc }) => (
-                <div key={year} className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs flex-shrink-0 relative z-10">
-                    {year.slice(2)}
-                  </div>
-                  <div className="pb-2">
-                    <div className="text-xs text-primary font-semibold mb-0.5">
-                      {year}
-                    </div>
-                    <h4 className="font-bold text-purple-deep mb-1">{title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Upcoming Events */}
       <section
         className="py-16 px-4"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+            "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
         }}
       >
         <div className="max-w-4xl mx-auto">
@@ -224,7 +160,7 @@ export default function About() {
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
               Mark Your Calendar
             </span>
-            <h2 className="text-3xl font-bold text-purple-deep mt-2">
+            <h2 className="font-playfair text-3xl font-bold text-charcoal-deep mt-2">
               Upcoming Events
             </h2>
             <p className="text-muted-foreground mt-2">
@@ -238,7 +174,7 @@ export default function About() {
               data-ocid="events.empty_state"
             >
               <div className="text-5xl mb-4">📅</div>
-              <h3 className="text-lg font-bold text-purple-deep mb-2">
+              <h3 className="font-playfair text-lg font-bold text-charcoal-deep mb-2">
                 No upcoming events
               </h3>
               <p className="text-muted-foreground text-sm">
@@ -258,14 +194,14 @@ export default function About() {
                     <div className="flex-shrink-0">
                       <div
                         className="w-16 h-16 rounded-2xl flex flex-col items-center justify-center text-center"
-                        style={{ background: "oklch(0.91 0.06 293)" }}
+                        style={{ background: "oklch(0.91 0.04 15)" }}
                       >
                         <CalendarDays className="w-6 h-6 text-primary" />
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h3 className="font-bold text-purple-deep text-lg">
+                        <h3 className="font-playfair font-bold text-charcoal-deep text-lg">
                           {event.title}
                         </h3>
                         <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/10 text-primary">

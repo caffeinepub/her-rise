@@ -60,14 +60,14 @@ export default function ReportIncident() {
         className="py-20 px-4 text-center"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+            "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
         }}
       >
         <div className="max-w-2xl mx-auto">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Safe & Secure
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-deep mt-2 mb-4">
+          <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-charcoal-deep mt-2 mb-4">
             Report an Incident
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">
@@ -89,7 +89,7 @@ export default function ReportIncident() {
             ].map(({ icon: Icon, text }) => (
               <div
                 key={text}
-                className="flex items-center gap-2 bg-lavender-bg px-4 py-2 rounded-full text-sm font-medium text-primary"
+                className="flex items-center gap-2 bg-cream-bg px-4 py-2 rounded-full text-sm font-medium text-primary"
               >
                 <Icon className="w-4 h-4" />
                 {text}
@@ -99,11 +99,11 @@ export default function ReportIncident() {
 
           {success ? (
             <div
-              className="text-center py-16 rounded-2xl bg-lavender-bg"
+              className="text-center py-16 rounded-2xl bg-cream-bg"
               data-ocid="report.success_state"
             >
               <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-purple-deep mb-3">
+              <h2 className="font-playfair text-2xl font-bold text-charcoal-deep mb-3">
                 Report Submitted Successfully
               </h2>
               <p className="text-muted-foreground max-w-sm mx-auto">
@@ -132,7 +132,7 @@ export default function ReportIncident() {
               data-ocid="report.modal"
             >
               <div className="rounded-2xl shadow-card p-8 border border-border">
-                <h2 className="text-xl font-bold text-purple-deep mb-6">
+                <h2 className="font-playfair text-xl font-bold text-charcoal-deep mb-6">
                   Incident Details
                 </h2>
 
@@ -234,7 +234,7 @@ export default function ReportIncident() {
                   <Button
                     type="submit"
                     disabled={submitting}
-                    className="flex-1 rounded-full bg-primary hover:bg-purple-deep text-white font-semibold py-5 shadow-purple"
+                    className="flex-1 rounded-full bg-primary hover:bg-primary/90 text-white font-semibold py-5 shadow-rose"
                     data-ocid="report.submit_button"
                   >
                     {submitting ? "Submitting..." : "Submit Report Anonymously"}

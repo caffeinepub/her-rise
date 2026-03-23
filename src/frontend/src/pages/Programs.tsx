@@ -13,7 +13,7 @@ const programs = [
   {
     icon: Shield,
     title: "Women Safety Support",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
     tag: "Core Service",
     tagColor: "bg-primary/10 text-primary",
     desc: "Our frontline crisis support service provides 24/7 helpline access, emergency shelter referrals, trauma-informed counseling, and personal safety planning for women in immediate or ongoing danger.",
@@ -27,7 +27,7 @@ const programs = [
   {
     icon: Scale,
     title: "Legal Assistance for Victims",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
     tag: "Legal Aid",
     tagColor: "bg-accent text-accent-foreground",
     desc: "We connect survivors with certified lawyers for free consultations, help file FIRs, support restraining order processes, guide through court proceedings, and advocate for policy change.",
@@ -41,7 +41,7 @@ const programs = [
   {
     icon: Megaphone,
     title: "Awareness Campaigns & Workshops",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
     tag: "Education",
     tagColor: "bg-primary/10 text-primary",
     desc: "Prevention through awareness: school programs, workplace sensitization, bystander intervention training, and large-scale public campaigns that shift cultural attitudes toward gender-based violence.",
@@ -55,7 +55,7 @@ const programs = [
   {
     icon: Zap,
     title: "Shakti Suraksha Squad",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
     tag: "Rapid Response",
     tagColor: "bg-accent text-accent-foreground",
     desc: "A trained network of community volunteers and professionals who respond quickly to crisis alerts, escort women to safety, provide first-responder support, and coordinate with local authorities.",
@@ -69,7 +69,7 @@ const programs = [
   {
     icon: Smartphone,
     title: "Technology-based Safety Solutions",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
     tag: "Tech",
     tagColor: "bg-primary/10 text-primary",
     desc: "The HER App offers GPS-enabled SOS alerts, real-time location sharing with trusted contacts, anonymous incident reporting, safety check-ins, and AI-guided safety resource discovery.",
@@ -89,14 +89,14 @@ export default function Programs() {
         className="py-20 px-4 text-center"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+            "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
         }}
       >
         <div className="max-w-3xl mx-auto">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             What We Offer
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-deep mt-2 mb-4">
+          <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-charcoal-deep mt-2 mb-4">
             Our Programs & Services
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">
@@ -128,7 +128,7 @@ export default function Programs() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <h3 className="text-xl font-bold text-purple-deep">
+                      <h3 className="font-playfair text-xl font-bold text-charcoal-deep">
                         {title}
                       </h3>
                       <span
@@ -144,7 +144,7 @@ export default function Programs() {
                       {features.map((f) => (
                         <span
                           key={f}
-                          className="text-xs px-3 py-1 rounded-full bg-lavender-bg text-foreground/70 font-medium"
+                          className="text-xs px-3 py-1 rounded-full bg-cream-bg text-foreground/70 font-medium"
                         >
                           {f}
                         </span>
@@ -165,8 +165,8 @@ export default function Programs() {
         </div>
       </section>
 
-      <section className="py-14 px-4 text-center bg-lavender-bg">
-        <h2 className="text-2xl font-bold text-purple-deep mb-3">
+      <section className="py-14 px-4 text-center bg-cream-bg">
+        <h2 className="font-playfair text-2xl font-bold text-charcoal-deep mb-3">
           Ready to Make a Difference?
         </h2>
         <p className="text-muted-foreground mb-6">
@@ -175,7 +175,7 @@ export default function Programs() {
         <div className="flex gap-4 justify-center flex-wrap">
           <Link to="/contact">
             <Button
-              className="rounded-full bg-primary hover:bg-purple-deep text-white px-8 shadow-purple"
+              className="rounded-full bg-primary hover:bg-primary/90 text-white px-8 shadow-rose"
               data-ocid="programs.primary_button"
             >
               Partner With Us

@@ -7,6 +7,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         sans: ["Poppins", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
       },
       colors: {
         border: "oklch(var(--border) / <alpha-value>)",
@@ -42,18 +43,18 @@ export default {
           DEFAULT: "oklch(var(--card) / <alpha-value>)",
           foreground: "oklch(var(--card-foreground) / <alpha-value>)",
         },
-        lavender: {
-          bg: "oklch(var(--lavender-bg) / <alpha-value>)",
-          deep: "oklch(var(--lavender-deep) / <alpha-value>)",
+        cream: {
+          bg: "oklch(var(--cream-bg) / <alpha-value>)",
+          deep: "oklch(var(--cream-deep) / <alpha-value>)",
         },
-        pink: {
-          soft: "oklch(var(--pink-soft) / <alpha-value>)",
-          light: "oklch(var(--pink-light) / <alpha-value>)",
+        rose: {
+          soft: "oklch(var(--rose-soft) / <alpha-value>)",
+          light: "oklch(var(--rose-light) / <alpha-value>)",
         },
-        purple: {
-          deep: "oklch(var(--purple-deep) / <alpha-value>)",
-          mid: "oklch(var(--purple-mid) / <alpha-value>)",
-          light: "oklch(var(--purple-light) / <alpha-value>)",
+        charcoal: {
+          deep: "oklch(var(--charcoal-deep) / <alpha-value>)",
+          mid: "oklch(var(--charcoal-mid) / <alpha-value>)",
+          light: "oklch(var(--charcoal-light) / <alpha-value>)",
         },
         emergency: {
           DEFAULT: "oklch(var(--emergency) / <alpha-value>)",
@@ -67,9 +68,9 @@ export default {
         full: "9999px",
       },
       boxShadow: {
-        card: "0 4px 24px -4px oklch(0.44 0.17 293 / 0.12), 0 1px 4px oklch(0.44 0.17 293 / 0.06)",
-        "card-hover": "0 8px 32px -4px oklch(0.44 0.17 293 / 0.2), 0 2px 8px oklch(0.44 0.17 293 / 0.1)",
-        purple: "0 4px 20px -2px oklch(0.44 0.17 293 / 0.35)",
+        card: "0 4px 24px -4px oklch(0.58 0.12 15 / 0.10), 0 1px 4px oklch(0.58 0.12 15 / 0.05)",
+        "card-hover": "0 8px 32px -4px oklch(0.58 0.12 15 / 0.18), 0 2px 8px oklch(0.58 0.12 15 / 0.08)",
+        rose: "0 4px 20px -2px oklch(0.58 0.12 15 / 0.30)",
       },
     },
   },

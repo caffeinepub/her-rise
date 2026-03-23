@@ -98,11 +98,26 @@ export interface Report {
     reportType: string;
     location?: string;
 }
+export interface Member {
+    id: bigint;
+    name: string;
+    email: string;
+    joinedAt: bigint;
+}
+export interface Subscriber {
+    id: bigint;
+    email: string;
+    subscribedAt: bigint;
+}
 export interface backendInterface {
     getAllReports(): Promise<Array<Report>>;
     submitReport(reportType: string, description: string, location: string | null): Promise<ReportId>;
+    joinClub(name: string, email: string): Promise<bigint>;
+    subscribe(email: string): Promise<bigint>;
+    getMembers(): Promise<Array<Member>>;
+    getSubscribers(): Promise<Array<Subscriber>>;
 }
-import type { Report as _Report, ReportId as _ReportId, Time as _Time } from "./declarations/backend.did.d.ts";
+import type { Report as _Report, ReportId as _ReportId, Time as _Time, Member as _Member, Subscriber as _Subscriber } from "./declarations/backend.did.d.ts";
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
     async getAllReports(): Promise<Array<Report>> {
@@ -131,6 +146,58 @@ export class Backend implements backendInterface {
         } else {
             const result = await this.actor.submitReport(arg0, arg1, to_candid_opt_n5(this._uploadFile, this._downloadFile, arg2));
             return result;
+        }
+    }
+    async joinClub(arg0: string, arg1: string): Promise<bigint> {
+        if (this.processError) {
+            try {
+                return await this.actor.joinClub(arg0, arg1);
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            return await this.actor.joinClub(arg0, arg1);
+        }
+    }
+    async subscribe(arg0: string): Promise<bigint> {
+        if (this.processError) {
+            try {
+                return await this.actor.subscribe(arg0);
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            return await this.actor.subscribe(arg0);
+        }
+    }
+    async getMembers(): Promise<Array<Member>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getMembers();
+                return result.map((x) => from_candid_Member(this._uploadFile, this._downloadFile, x));
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getMembers();
+            return result.map((x) => from_candid_Member(this._uploadFile, this._downloadFile, x));
+        }
+    }
+    async getSubscribers(): Promise<Array<Subscriber>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getSubscribers();
+                return result.map((x) => from_candid_Subscriber(this._uploadFile, this._downloadFile, x));
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getSubscribers();
+            return result.map((x) => from_candid_Subscriber(this._uploadFile, this._downloadFile, x));
         }
     }
 }
@@ -166,6 +233,21 @@ function from_candid_vec_n1(_uploadFile: (file: ExternalBlob) => Promise<Uint8Ar
 }
 function to_candid_opt_n5(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: string | null): [] | [string] {
     return value === null ? candid_none() : candid_some(value);
+}
+function from_candid_Member(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: _Member): Member {
+    return {
+        id: value.id,
+        name: value.name,
+        email: value.email,
+        joinedAt: value.joinedAt,
+    };
+}
+function from_candid_Subscriber(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: _Subscriber): Subscriber {
+    return {
+        id: value.id,
+        email: value.email,
+        subscribedAt: value.subscribedAt,
+    };
 }
 export interface CreateActorOptions {
     agent?: Agent;

@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   BookOpen,
-  Building2,
   GraduationCap,
   MapPin,
   Megaphone,
@@ -21,26 +20,20 @@ const programs = [
     icon: Shield,
     title: "Women Safety Support",
     desc: "24/7 crisis support, safe shelter referrals, and personal safety counseling for women in need.",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
   {
     icon: Scale,
     title: "Legal Assistance",
     desc: "Free legal aid, court guidance, and advocacy services for survivors of abuse and discrimination.",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
   },
   {
     icon: Megaphone,
     title: "Awareness Campaigns",
     desc: "Community workshops, school programs, and public campaigns to shift culture and prevent violence.",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
-];
-
-const stats = [
-  { value: "15,000+", label: "Women Supported", icon: Users },
-  { value: "120+", label: "Partner Organizations", icon: Building2 },
-  { value: "45+", label: "Cities Covered", icon: MapPin },
 ];
 
 // ✏️ Update team members here — add photo URL or leave empty for initials avatar
@@ -48,47 +41,47 @@ const teamMembers = [
   {
     name: "Bhavagna Reddy",
     role: "Founder & Director",
-    study: "Second-year Fashion Design, Hyderabad",
+    study: "Second-year Fashion Design student, Hyderabad",
     photo: "/assets/uploads/BHAVAGNA-REDDY-2.jpeg",
-    desc: "Bhavagna Reddy is the Founder and Director of HER RISE. She is passionate about building initiatives that empower women, promote safety awareness, and create a supportive community through education and technology.",
-  },
-  {
-    name: "Meghana Reddy",
-    role: "Human Resources Manager",
-    study: "Second-year Fashion Design, Hyderabad",
-    photo: "/assets/uploads/MEGHANA-REDDY-5.jpeg",
-    desc: "Meghana Reddy serves as the Human Resources Manager at HER RISE and helps coordinate team collaboration, organizational planning, and internal communication.",
+    desc: "Founder of HER RISE, dedicated to empowering women through safety awareness, community initiatives, and technology-driven support.",
   },
   {
     name: "Pradhiksha Reddy",
     role: "Administrative Manager",
     study: "Second-year Undergraduate, MGIT Hyderabad",
     photo: "/assets/uploads/PRADHIKSHA-REDDY-1.jpeg",
-    desc: "Pradhiksha Reddy manages administrative operations within HER RISE and helps organize activities, coordinate initiatives, and ensure smooth execution of programs.",
+    desc: "Oversees administrative coordination and supports the planning and organization of HER RISE initiatives and activities.",
+  },
+  {
+    name: "Meghana Reddy",
+    role: "Human Resources Manager",
+    study: "Second-year Fashion Design student, Hyderabad",
+    photo: "/assets/uploads/MEGHANA-REDDY-5.jpeg",
+    desc: "Manages team coordination and supports internal communication to ensure smooth collaboration within HER RISE.",
   },
   {
     name: "Srivalli Oduri",
-    role: "Digital Media Head",
+    role: "IT Support",
     study: "Second-year Undergraduate, MGIT Hyderabad",
     photo: "/assets/uploads/SRIVALLI-ODURI-3.jpeg",
-    desc: "Srivalli Oduri manages the digital presence of HER RISE including social media communication, awareness campaigns, and online engagement initiatives.",
+    desc: "Responsible for the technical development and maintenance of the HER RISE website and digital platforms.",
   },
   {
     name: "Samiksha Reddy",
     role: "Digital Media Head",
-    study: "Second-year Engineering, Hyderabad",
+    study: "Second-year Engineering student, Hyderabad",
     photo: "/assets/uploads/SAMIKSHA-REDDY-6.jpeg",
-    desc: "Samiksha Reddy contributes to the digital media initiatives of HER RISE by supporting online awareness programs and helping expand the organization's digital reach.",
+    desc: "Leads the digital presence of HER RISE by managing social media platforms, online campaigns, and technical coordination of digital content for awareness initiatives.",
   },
 ];
 
 const avatarColors = [
-  "bg-violet-200 text-violet-800",
-  "bg-pink-200 text-pink-800",
-  "bg-purple-200 text-purple-800",
-  "bg-fuchsia-200 text-fuchsia-800",
   "bg-rose-200 text-rose-800",
-  "bg-indigo-200 text-indigo-800",
+  "bg-amber-100 text-amber-800",
+  "bg-rose-100 text-rose-700",
+  "bg-orange-100 text-orange-700",
+  "bg-pink-100 text-pink-700",
+  "bg-red-100 text-red-700",
 ];
 
 function getInitials(name: string) {
@@ -105,41 +98,53 @@ export default function Home() {
     <div className="overflow-x-hidden">
       {/* Hero Section */}
       <section
-        className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-4 py-20"
+        className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 py-24 overflow-hidden"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 50%, oklch(0.96 0.02 293) 100%)",
+            "linear-gradient(150deg, oklch(0.96 0.025 70) 0%, oklch(0.97 0.018 30) 40%, oklch(0.95 0.030 15) 100%)",
         }}
       >
+        {/* Editorial watermark */}
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+          aria-hidden="true"
+        >
+          <span
+            className="font-playfair font-bold italic text-[clamp(5rem,20vw,18rem)] leading-none whitespace-nowrap"
+            style={{ color: "oklch(0.58 0.12 15 / 0.045)" }}
+          >
+            HER RISE
+          </span>
+        </div>
+
         {/* Decorative blobs */}
         <div
-          className="absolute top-10 left-10 w-48 h-48 rounded-full opacity-30"
-          style={{ background: "oklch(0.85 0.06 293)" }}
+          className="absolute top-10 left-10 w-56 h-56 rounded-full opacity-25"
+          style={{ background: "oklch(0.85 0.08 15)", filter: "blur(40px)" }}
         />
         <div
-          className="absolute bottom-20 right-10 w-64 h-64 rounded-full opacity-20"
-          style={{ background: "oklch(0.90 0.05 350)" }}
-        />
-        <div
-          className="absolute top-1/3 right-20 w-32 h-32 rounded-full opacity-20"
-          style={{ background: "oklch(0.88 0.06 293)" }}
+          className="absolute bottom-20 right-10 w-72 h-72 rounded-full opacity-20"
+          style={{ background: "oklch(0.88 0.05 60)", filter: "blur(50px)" }}
         />
 
-        <div className="relative z-10 max-w-4xl mx-auto animate-fade-in-up">
-          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-primary/10 text-primary mb-6">
-            Empowering Women Since 2018
+        {/* Thin decorative rule */}
+        <div className="relative z-10 flex items-center gap-4 mb-8">
+          <div className="w-16 h-px bg-primary/40" />
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary tracking-widest uppercase">
+            A Student-Led Initiative, Est. 2026
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-purple-deep leading-tight mb-6">
+          <div className="w-16 h-px bg-primary/40" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto animate-fade-in-up">
+          <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-charcoal-deep leading-[1.1] tracking-tight mb-6">
             Safety, Support, and{" "}
-            <span
-              className="relative"
-              style={{ color: "oklch(0.44 0.17 293)" }}
-            >
+            <span className="italic" style={{ color: "oklch(0.58 0.12 15)" }}>
               Strength
-            </span>{" "}
-            for Every Woman.
+            </span>
+            <br className="hidden sm:block" /> for Every Woman.
           </h1>
-          <p className="text-lg sm:text-xl text-foreground/65 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-foreground/60 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
             HER RISE empowers women through technology, legal support, community
             awareness, and rapid-response initiatives — building a world where
             every woman lives without fear.
@@ -166,21 +171,8 @@ export default function Home() {
         </div>
 
         {/* Illustration */}
-        <div className="relative z-10 mt-12 w-full max-w-2xl mx-auto animate-fade-in delay-300">
+        <div className="relative z-10 mt-14 w-full max-w-2xl mx-auto animate-fade-in delay-300">
           <WomenIllustration />
-        </div>
-      </section>
-
-      {/* Stats Row */}
-      <section className="bg-primary py-12 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-          {stats.map(({ value, label, icon: Icon }) => (
-            <div key={label} className="flex flex-col items-center gap-2">
-              <Icon className="w-6 h-6 text-white/70" />
-              <div className="text-3xl font-extrabold text-white">{value}</div>
-              <div className="text-sm text-white/75 font-medium">{label}</div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -190,14 +182,14 @@ export default function Home() {
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Who We Are
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-purple-deep mt-2 mb-6">
+          <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-charcoal-deep mt-2 mb-6">
             About HER RISE
           </h2>
           <p className="text-lg text-foreground/65 leading-relaxed max-w-2xl mx-auto mb-6">
             HER RISE is a student-led club dedicated to uplifting women on
-            campus through education, mentorship, and community action. Founded
-            in 2018, we create safe spaces for meaningful conversations,
-            skill-building workshops, and peer support networks.
+            campus through education, mentorship, and community action. We
+            create safe spaces for meaningful conversations, skill-building
+            workshops, and peer support networks.
           </p>
           <p className="text-foreground/60 leading-relaxed max-w-2xl mx-auto">
             From awareness campaigns to tech initiatives, HER RISE bridges the
@@ -224,12 +216,14 @@ export default function Home() {
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="rounded-2xl p-6 bg-lavender-bg shadow-card"
+                className="rounded-2xl p-6 bg-cream-bg border border-border shadow-card"
               >
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
-                <h4 className="font-bold text-purple-deep mb-2">{title}</h4>
+                <h4 className="font-playfair font-bold text-charcoal-deep mb-2">
+                  {title}
+                </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {desc}
                 </p>
@@ -240,19 +234,13 @@ export default function Home() {
       </section>
 
       {/* Meet Our Team */}
-      <section
-        className="py-20 px-4"
-        style={{
-          background:
-            "linear-gradient(135deg, oklch(0.96 0.02 293) 0%, oklch(0.97 0.02 350) 100%)",
-        }}
-      >
+      <section className="py-20 px-4 bg-cream-bg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
               The People Behind HER RISE
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-purple-deep mt-2">
+            <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-charcoal-deep mt-2">
               Meet Our Team
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
@@ -263,7 +251,7 @@ export default function Home() {
             {teamMembers.map((member, i) => (
               <div
                 key={member.name}
-                className="bg-white rounded-2xl p-6 shadow-card text-center hover:shadow-card-hover transition-shadow"
+                className="bg-white rounded-2xl p-6 shadow-card border border-border text-center hover:shadow-card-hover transition-shadow"
                 data-ocid={`team.item.${i + 1}`}
               >
                 <div className="flex justify-center mb-4">
@@ -281,7 +269,7 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                <h3 className="font-bold text-purple-deep text-base mb-1">
+                <h3 className="font-playfair font-bold text-charcoal-deep text-base mb-1">
                   {member.name}
                 </h3>
                 <p className="text-primary text-xs font-semibold mb-1">
@@ -290,7 +278,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-xs leading-relaxed mb-2">
                   {member.study}
                 </p>
-                <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3">
+                <p className="text-muted-foreground text-xs leading-relaxed">
                   {member.desc}
                 </p>
               </div>
@@ -306,7 +294,7 @@ export default function Home() {
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
               What We Do
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-purple-deep mt-2">
+            <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-charcoal-deep mt-2">
               Our Core Programs
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
@@ -318,14 +306,14 @@ export default function Home() {
             {programs.map(({ icon: Icon, title, desc, color }) => (
               <div
                 key={title}
-                className="rounded-2xl p-7 shadow-card hover:shadow-card-hover transition-shadow group"
+                className="rounded-2xl p-7 bg-white border border-border shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${color}`}
                 >
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-lg text-purple-deep mb-2">
+                <h3 className="font-playfair font-bold text-lg text-charcoal-deep mb-2">
                   {title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -356,13 +344,7 @@ export default function Home() {
       </section>
 
       {/* Technology Teaser */}
-      <section
-        className="py-20 px-4"
-        style={{
-          background:
-            "linear-gradient(135deg, oklch(0.96 0.02 293) 0%, oklch(0.97 0.02 350) 100%)",
-        }}
-      >
+      <section className="py-20 px-4 bg-cream-bg">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 animate-float">
             <PhoneMockup />
@@ -371,7 +353,7 @@ export default function Home() {
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
               Innovation
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-purple-deep mt-2 mb-4">
+            <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-charcoal-deep mt-2 mb-4">
               Technology Keeping Women Safe
             </h2>
             <p className="text-foreground/65 leading-relaxed mb-6">
@@ -397,7 +379,7 @@ export default function Home() {
             </ul>
             <Link to="/technology">
               <Button
-                className="rounded-full bg-primary hover:bg-purple-deep text-white px-8 shadow-purple"
+                className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8 shadow-rose"
                 data-ocid="home.tech.primary_button"
               >
                 Explore Technology
@@ -413,7 +395,7 @@ export default function Home() {
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Take Action
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-purple-deep mt-2 mb-4">
+          <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-charcoal-deep mt-2 mb-4">
             We're Here When You Need Us
           </h2>
           <p className="text-muted-foreground mb-10 max-w-lg mx-auto">
@@ -428,7 +410,7 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-emergency/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚨</span>
               </div>
-              <h3 className="text-xl font-bold text-purple-deep mb-2">
+              <h3 className="font-playfair text-xl font-bold text-charcoal-deep mb-2">
                 Emergency Help
               </h3>
               <p className="text-muted-foreground text-sm mb-5">
@@ -444,11 +426,11 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl p-8 shadow-card border border-primary/10 bg-lavender-bg">
+            <div className="rounded-2xl p-8 shadow-card border border-primary/10 bg-cream-bg">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📝</span>
               </div>
-              <h3 className="text-xl font-bold text-purple-deep mb-2">
+              <h3 className="font-playfair text-xl font-bold text-charcoal-deep mb-2">
                 Report an Incident
               </h3>
               <p className="text-muted-foreground text-sm mb-5">

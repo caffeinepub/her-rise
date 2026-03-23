@@ -13,19 +13,19 @@ const helplines = [
     name: "Police Emergency",
     number: "100",
     available: "24/7",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
   {
     name: "HER Foundation Helpline",
     number: "1800-XXX-XXXX",
     available: "24/7 Free",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
   },
   {
     name: "Domestic Violence Helpline",
     number: "7827-170-170",
     available: "24/7",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
   {
     name: "Women in Distress",
@@ -37,7 +37,7 @@ const helplines = [
     name: "Child Helpline",
     number: "1098",
     available: "24/7",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function Emergency() {
           <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
             <AlertTriangle className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+          <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-white mb-4">
             Emergency Help
           </h1>
           <p className="text-white/85 text-lg mb-8">
@@ -105,7 +105,7 @@ export default function Emergency() {
       {/* Helplines Grid */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-purple-deep mb-2 text-center">
+          <h2 className="font-playfair text-2xl font-bold text-charcoal-deep mb-2 text-center">
             Emergency Helpline Numbers
           </h2>
           <p className="text-center text-muted-foreground mb-8">
@@ -127,7 +127,7 @@ export default function Emergency() {
                 >
                   <Phone className="w-3 h-3" /> {available}
                 </div>
-                <div className="font-bold text-purple-deep mb-1">{name}</div>
+                <div className="font-bold text-charcoal-deep mb-1">{name}</div>
                 <div className="text-2xl font-extrabold text-primary">
                   {number}
                 </div>
@@ -140,10 +140,10 @@ export default function Emergency() {
       {/* Steps */}
       <section
         className="py-16 px-4"
-        style={{ background: "oklch(0.96 0.02 293)" }}
+        style={{ background: "oklch(0.95 0.02 70)" }}
       >
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-purple-deep mb-2 text-center">
+          <h2 className="font-playfair text-2xl font-bold text-charcoal-deep mb-2 text-center">
             What to Do in an Emergency
           </h2>
           <p className="text-center text-muted-foreground mb-10">
@@ -159,7 +159,7 @@ export default function Emergency() {
                   {step}
                 </div>
                 <div>
-                  <div className="font-bold text-purple-deep mb-1 flex items-center gap-2">
+                  <div className="font-bold text-charcoal-deep mb-1 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-primary" /> {title}
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -174,7 +174,7 @@ export default function Emergency() {
 
       {/* CTA */}
       <section className="py-14 px-4 bg-white text-center">
-        <h2 className="text-2xl font-bold text-purple-deep mb-3">
+        <h2 className="font-playfair text-2xl font-bold text-charcoal-deep mb-3">
           Want to Report an Incident?
         </h2>
         <p className="text-muted-foreground mb-6 max-w-md mx-auto">
@@ -183,7 +183,7 @@ export default function Emergency() {
         </p>
         <Link to="/report">
           <Button
-            className="rounded-full bg-primary hover:bg-purple-deep text-white px-10 shadow-purple"
+            className="rounded-full bg-primary hover:bg-primary/90 text-white px-10 shadow-rose"
             data-ocid="emergency.secondary_button"
           >
             Report an Incident <ArrowRight className="w-4 h-4 ml-2" />

@@ -19,9 +19,24 @@ export interface Report {
 }
 export type ReportId = bigint;
 export type Time = bigint;
+export interface Member {
+  'id' : bigint,
+  'name' : string,
+  'email' : string,
+  'joinedAt' : bigint,
+}
+export interface Subscriber {
+  'id' : bigint,
+  'email' : string,
+  'subscribedAt' : bigint,
+}
 export interface _SERVICE {
   'getAllReports' : ActorMethod<[], Array<Report>>,
   'submitReport' : ActorMethod<[string, string, [] | [string]], ReportId>,
+  'joinClub' : ActorMethod<[string, string], bigint>,
+  'subscribe' : ActorMethod<[string], bigint>,
+  'getMembers' : ActorMethod<[], Array<Member>>,
+  'getSubscribers' : ActorMethod<[], Array<Subscriber>>,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];

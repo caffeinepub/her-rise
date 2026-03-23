@@ -8,37 +8,37 @@ const features = [
     icon: Bell,
     title: "GPS Emergency Alerts",
     desc: "One tap sends your exact GPS location to pre-selected trusted contacts and our crisis response team — even when cellular is weak.",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
   },
   {
     icon: Smartphone,
     title: "HER Safety App",
     desc: "Available on iOS and Android, our app includes SOS triggers, safe-walk tracking, and a directory of local resources — all in one intuitive interface.",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
   {
     icon: FileText,
     title: "Digital Reporting System",
     desc: "Securely and anonymously report incidents through our platform. All reports are encrypted, reviewed by trained staff, and can initiate formal proceedings.",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
   },
   {
     icon: Users,
     title: "Community Safety Network",
     desc: "A peer-to-peer alert network where community members can flag unsafe zones, share real-time safety updates, and coordinate with Shakti Suraksha Squad volunteers.",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
   {
     icon: MapPin,
     title: "Safe Route Mapping",
     desc: "AI-assisted safe route recommendations based on community-reported incident data, time of day, and local patrol coverage.",
-    color: "bg-lavender-bg text-primary",
+    color: "bg-cream-bg text-primary",
   },
   {
     icon: Lock,
     title: "End-to-End Encryption",
     desc: "Every communication, report, and location share on our platform is fully encrypted. We will never share your data without explicit consent.",
-    color: "bg-pink-light text-accent-foreground",
+    color: "bg-rose-light text-accent-foreground",
   },
 ];
 
@@ -49,14 +49,14 @@ export default function Technology() {
         className="py-20 px-4 text-center"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+            "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
         }}
       >
         <div className="max-w-3xl mx-auto">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Innovation for Safety
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-deep mt-2 mb-4">
+          <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-charcoal-deep mt-2 mb-4">
             Technology for Women's Safety
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">
@@ -77,7 +77,7 @@ export default function Technology() {
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
               HER App
             </span>
-            <h2 className="text-3xl font-bold text-purple-deep mt-2 mb-4">
+            <h2 className="font-playfair text-3xl font-bold text-charcoal-deep mt-2 mb-4">
               Your Safety Companion, Always Ready
             </h2>
             <p className="text-foreground/65 leading-relaxed mb-6">
@@ -110,7 +110,7 @@ export default function Technology() {
                     </span>
                   </div>
                   <div>
-                    <div className="font-semibold text-purple-deep text-sm">
+                    <div className="font-semibold text-charcoal-deep text-sm">
                       {title}
                     </div>
                     <div className="text-xs text-muted-foreground">{desc}</div>
@@ -120,7 +120,7 @@ export default function Technology() {
             </div>
             <div className="mt-8 flex gap-3 flex-wrap">
               <Button
-                className="rounded-full bg-primary hover:bg-purple-deep text-white px-6 shadow-purple"
+                className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 shadow-rose"
                 data-ocid="tech.primary_button"
               >
                 Download HER App
@@ -142,11 +142,11 @@ export default function Technology() {
       {/* Feature Cards */}
       <section
         className="py-16 px-4"
-        style={{ background: "oklch(0.96 0.02 293)" }}
+        style={{ background: "oklch(0.95 0.02 70)" }}
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-purple-deep">
+            <h2 className="font-playfair text-3xl font-bold text-charcoal-deep">
               Platform Features
             </h2>
             <p className="text-muted-foreground mt-2">
@@ -165,7 +165,9 @@ export default function Technology() {
                 >
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-bold text-purple-deep mb-2">{title}</h3>
+                <h3 className="font-playfair font-bold text-charcoal-deep mb-2">
+                  {title}
+                </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {desc}
                 </p>

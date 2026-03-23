@@ -3,13 +3,14 @@ import { SiInstagram, SiLinkedin } from "react-icons/si";
 
 // ✏️ Update contact details here
 const CONTACT_INFO = {
-  email: "herrise.hyd@gmail.com", // ✏️ Update with official email
+  email: "herrise.hyd@gmail.com",
   instagram: "https://instagram.com/herrise.hyd",
   instagramHandle: "@herrise.hyd",
-  linkedin: "", // ✏️ Add LinkedIn URL when available
+  linkedin: "https://www.linkedin.com/in/herrise-hyd", // ✏️ Update LinkedIn URL if needed
+  linkedinHandle: "HER RISE",
 };
 
-// ✏️ Update team member contacts here
+// ✏️ Update team member contacts here — order: Bhavagna, Pradhiksha, Meghana, Srivalli, Samiksha
 const TEAM_CONTACTS = [
   { name: "Bhavagna Reddy", role: "Founder & Director", phone: "8309301075" },
   {
@@ -17,21 +18,21 @@ const TEAM_CONTACTS = [
     role: "Administrative Manager",
     phone: "8341693369",
   },
-  { name: "Samiksha Reddy", role: "Digital Media Head", phone: "9866969332" },
-  { name: "Srivalli Oduri", role: "Digital Media Head", phone: "8143846341" },
   {
     name: "Meghana Reddy",
     role: "Human Resources Manager",
     phone: "+91 99596 01124",
   },
+  { name: "Srivalli Oduri", role: "IT Support", phone: "8143846341" },
+  { name: "Samiksha Reddy", role: "Digital Media Head", phone: "9866969332" },
 ];
 
 const avatarColors = [
-  "bg-violet-200 text-violet-800",
-  "bg-pink-200 text-pink-800",
-  "bg-purple-200 text-purple-800",
-  "bg-fuchsia-200 text-fuchsia-800",
+  "bg-rose-100 text-rose-700",
+  "bg-amber-100 text-amber-700",
   "bg-rose-200 text-rose-800",
+  "bg-orange-100 text-orange-700",
+  "bg-pink-100 text-pink-700",
 ];
 
 function getInitials(name: string) {
@@ -52,17 +53,13 @@ export default function Contact() {
       Icon: SiInstagram,
       color: "text-pink-600",
     },
-    ...(CONTACT_INFO.linkedin
-      ? [
-          {
-            platform: "LinkedIn",
-            handle: "HER RISE",
-            href: CONTACT_INFO.linkedin,
-            Icon: SiLinkedin,
-            color: "text-blue-600",
-          },
-        ]
-      : []),
+    {
+      platform: "LinkedIn",
+      handle: CONTACT_INFO.linkedinHandle,
+      href: CONTACT_INFO.linkedin,
+      Icon: SiLinkedin,
+      color: "text-blue-600",
+    },
   ];
 
   return (
@@ -72,14 +69,14 @@ export default function Contact() {
         className="py-20 px-4 text-center"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+            "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
         }}
       >
         <div className="max-w-2xl mx-auto">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Get in Touch
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-deep mt-2 mb-4">
+          <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-charcoal-deep mt-2 mb-4">
             Contact HER RISE
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">
@@ -96,7 +93,7 @@ export default function Contact() {
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
               Direct Contact
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-purple-deep mt-2">
+            <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-charcoal-deep mt-2">
               Reach Our Team
             </h2>
             <p className="text-muted-foreground mt-2 text-sm">
@@ -118,7 +115,7 @@ export default function Contact() {
                   {getInitials(name)}
                 </div>
                 <div className="min-w-0">
-                  <div className="font-bold text-purple-deep text-sm truncate">
+                  <div className="font-bold text-charcoal-deep text-sm truncate">
                     {name}
                   </div>
                   <div className="text-primary text-xs font-medium mb-1 truncate">
@@ -140,14 +137,14 @@ export default function Contact() {
               className="rounded-2xl p-6 shadow-card border border-border hover:shadow-card-hover transition-all group bg-white flex items-center gap-5 max-w-md mx-auto"
               data-ocid="contact.card"
             >
-              <div className="w-12 h-12 rounded-xl bg-lavender-bg flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-cream-bg flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
                 <Mail className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
               </div>
               <div>
                 <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
                   Club Email
                 </div>
-                <div className="font-semibold text-purple-deep text-sm">
+                <div className="font-semibold text-charcoal-deep text-sm">
                   {CONTACT_INFO.email}
                 </div>
               </div>
@@ -159,10 +156,10 @@ export default function Contact() {
             className="rounded-2xl p-8 shadow-card"
             style={{
               background:
-                "linear-gradient(135deg, oklch(0.96 0.03 293) 0%, oklch(0.97 0.02 350) 100%)",
+                "linear-gradient(135deg, oklch(0.95 0.03 70) 0%, oklch(0.96 0.02 15) 100%)",
             }}
           >
-            <h2 className="text-xl font-bold text-purple-deep mb-2 text-center">
+            <h2 className="font-playfair text-xl font-bold text-charcoal-deep mb-2 text-center">
               Follow HER RISE
             </h2>
             <p className="text-muted-foreground text-sm text-center mb-8">
@@ -177,7 +174,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={platform}
-                  className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white shadow-card hover:shadow-card-hover text-purple-deep font-medium text-sm hover:text-primary transition-all group"
+                  className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white shadow-card hover:shadow-card-hover text-charcoal-deep font-medium text-sm hover:text-primary transition-all group"
                   data-ocid="contact.link"
                 >
                   <Icon className={`w-5 h-5 ${color}`} />

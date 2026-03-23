@@ -17,6 +17,17 @@ export const Report = IDL.Record({
   'reportType' : IDL.Text,
   'location' : IDL.Opt(IDL.Text),
 });
+export const Member = IDL.Record({
+  'id' : IDL.Nat,
+  'name' : IDL.Text,
+  'email' : IDL.Text,
+  'joinedAt' : IDL.Int,
+});
+export const Subscriber = IDL.Record({
+  'id' : IDL.Nat,
+  'email' : IDL.Text,
+  'subscribedAt' : IDL.Int,
+});
 
 export const idlService = IDL.Service({
   'getAllReports' : IDL.Func([], [IDL.Vec(Report)], []),
@@ -25,6 +36,10 @@ export const idlService = IDL.Service({
       [ReportId],
       [],
     ),
+  'joinClub' : IDL.Func([IDL.Text, IDL.Text], [IDL.Nat], []),
+  'subscribe' : IDL.Func([IDL.Text], [IDL.Nat], []),
+  'getMembers' : IDL.Func([], [IDL.Vec(Member)], ['query']),
+  'getSubscribers' : IDL.Func([], [IDL.Vec(Subscriber)], ['query']),
 });
 
 export const idlInitArgs = [];
@@ -39,6 +54,17 @@ export const idlFactory = ({ IDL }) => {
     'reportType' : IDL.Text,
     'location' : IDL.Opt(IDL.Text),
   });
+  const Member = IDL.Record({
+    'id' : IDL.Nat,
+    'name' : IDL.Text,
+    'email' : IDL.Text,
+    'joinedAt' : IDL.Int,
+  });
+  const Subscriber = IDL.Record({
+    'id' : IDL.Nat,
+    'email' : IDL.Text,
+    'subscribedAt' : IDL.Int,
+  });
   
   return IDL.Service({
     'getAllReports' : IDL.Func([], [IDL.Vec(Report)], []),
@@ -47,6 +73,10 @@ export const idlFactory = ({ IDL }) => {
         [ReportId],
         [],
       ),
+    'joinClub' : IDL.Func([IDL.Text, IDL.Text], [IDL.Nat], []),
+    'subscribe' : IDL.Func([IDL.Text], [IDL.Nat], []),
+    'getMembers' : IDL.Func([], [IDL.Vec(Member)], ['query']),
+    'getSubscribers' : IDL.Func([], [IDL.Vec(Subscriber)], ['query']),
   });
 };
 
